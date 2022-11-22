@@ -1,28 +1,43 @@
-#container {
-  text-align: center;
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+ion-title
+{
+  padding-top: 40px;
+  font-size: 46px;
+  font-family: 'Imperial Script', cursive;
+  color: #077C76;
+  text-shadow: 0px 1px 1px #077C76;
+}
+ion-img{
+  width: 50%;
+  margin: auto;
+  display: block;
+  filter: drop-shadow(1px 1px 0.5px #077C76);
+  padding-bottom: 35px;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+ion-button
+{
+  text-transform: none;
+  font-weight: 300;
+  color: white;
+  background-color: #D79708;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+.description{
+  
 }
 
-#container a {
-  text-decoration: none;
+.contact{
+  font-weight: 100;
+  font-style: italic;
+  padding-bottom: 10px;
 }
 

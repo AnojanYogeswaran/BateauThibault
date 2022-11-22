@@ -1,27 +1,54 @@
-<ion-header [translucent]="true">
-  <ion-toolbar class="home_title">
-    <ion-title center>Le bateau de Thibault</ion-title>
-  </ion-toolbar>
-  <ion-content class="home_par">
-    Vente en direct de notre bateau
-    Produits selon la saison, Livraisons sur Paris
-  </ion-content>
-</ion-header>
+
+<ion-content>
+<ion-title class="titre ion-text-center">Le bateau de Thibault</ion-title>
+<ion-img src="../../assets/ressources/tibo_boat.png" 
+  alt="Boat"></ion-img>
+<div class="ion-text-center description">
+    Vente en direct de notre bateau <br>
+    Produits selon la saison, livraisons sur Paris
+</div>
+  <div class="ion-text-center contact">
+    06.63.99.99.78<br>
+    lebateauthibaut@gmail.com <br>
+    www.facebook.com/lebateauthibault
+  </div>
 <ion-grid>
+<ion-row>
+  <ion-col>
+    <ion-button expand="block" size="large" color="orange">
+      <ion-label>
+        Produits et promotions
+      </ion-label>
+    </ion-button>
+  </ion-col>
+</ion-row>
+  
   <ion-row>
-    <ion-col>Produits et Promotions</ion-col>
+    <ion-col> <ion-button expand="block" size="large" color="orange">
+      <ion-label>
+        Recettes
+      </ion-label>
+    </ion-button></ion-col>
+    <ion-col> <ion-button expand="block" size="large" color="orange">
+      <ion-label>
+        Contact
+      </ion-label>
+    </ion-button></ion-col>
+    
   </ion-row>
-</ion-grid>
-<ion-grid>
+
   <ion-row>
-    <ion-col>Bateaux</ion-col>
-    <ion-col>Restaurants</ion-col>
-  </ion-row>
-</ion-grid>
-<ion-grid>
-  <ion-row>
-    <ion-col>Recettes</ion-col>
-    <ion-col>Contacts</ion-col>
+    <ion-col> <ion-button expand="block" size="large" color="orange">
+      <ion-label>
+        Recettes
+      </ion-label>
+    </ion-button></ion-col>
+    <ion-col> <ion-button expand="block" size="large" color="orange">
+      <ion-label>
+        Contact
+      </ion-label>
+    </ion-button></ion-col>
     
   </ion-row>
 </ion-grid>
+</ion-content>
