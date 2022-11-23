@@ -48,7 +48,7 @@ export class RestaurantPage implements OnInit {
         restaurant: restaurant
       }
     };
-    this.router.navigate(['single-restaurant'], navigationExtras);
+    this.router.navigate(['tabs/single-restaurant'], navigationExtras);
   }
 
 }

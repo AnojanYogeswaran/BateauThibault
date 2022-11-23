@@ -55,7 +55,7 @@ export class RecipePage implements OnInit {
         recipe: recipe
       }
     };
-    this.router.navigate(['single-recipe'], navigationExtras);
+    this.router.navigate(['tabs/single-recipe'], navigationExtras);
   }
 
 }

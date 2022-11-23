@@ -46,7 +46,7 @@ export class BoatPage implements OnInit {
         boat: boat
       }
     };
-    this.router.navigate(['single-boat'], navigationExtras);
+    this.router.navigate(['tabs/single-boat'], navigationExtras);
   }
 
 }
