@@ -26,6 +26,14 @@ const routes: Routes = [
     path: 'single-recipe',
     loadChildren: () => import('./single-recipe/single-recipe.module').then( m => m.SingleRecipePageModule)
   },
+  {
+    path: 'restaurant',
+    loadChildren: () => import('./restaurant/restaurant.module').then( m => m.RestaurantPageModule)
+  },
+  {
+    path: 'single-restaurant',
+    loadChildren: () => import('./single-restaurant/single-restaurant.module').then( m => m.SingleRestaurantPageModule)
+  },
 
 ];
 

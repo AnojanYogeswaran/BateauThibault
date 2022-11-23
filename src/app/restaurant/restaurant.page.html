@@ -1,0 +1,14 @@
+<ion-content>
+  <ion-title class="titre ion-text-center">Nos Restaurants partenaires</ion-title>
+
+  <swiper [autoplay]="true" [keyboard]="true" [pagination]="true" [scrollbar]="true" [zoom]="true" effect="fade" [scrollbar]="{draggable:true} " >
+    <ng-template swiperSlide *ngFor="let restaurant of restaurantList ">
+      <app-carousel 
+      libelle={{restaurant.name}}
+      imgPath={{restaurant.imgPath}}
+      subtitle={{restaurant.speciality}}
+      (click)="goToDetails(restaurant)"
+      >
+      </app-carousel>
+    </ng-template>
+  </swiper>
