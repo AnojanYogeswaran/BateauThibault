@@ -14,6 +14,10 @@ const routes: Routes = [
     path: 'boat',
     loadChildren: () => import('./boat/boat.module').then( m => m.BoatPageModule)
   },
+  {
+    path: 'single-boat',
+    loadChildren: () => import('./single-boat/single-boat.module').then( m => m.SingleBoatPageModule)
+  },
 
 ];
 
