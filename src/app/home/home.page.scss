@@ -20,17 +20,20 @@ ion-img{
   margin: auto;
   display: block;
   filter: drop-shadow(1px 1px 0.5px #077C76);
-  padding-bottom: 35px;
+  padding-bottom: 25px;
 }
 
 ion-button
 {
   text-transform: none;
   font-weight: 300;
+  
   color: white;
   background-color: #D79708;
 }
-
+ion-button ion-label{
+  font-size: 16px;
+}
 .description{
   
 }
