@@ -10,7 +10,11 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
+  },  {
+    path: 'boat',
+    loadChildren: () => import('./boat/boat.module').then( m => m.BoatPageModule)
   },
+
 ];
 
 @NgModule({
