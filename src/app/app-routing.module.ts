@@ -18,6 +18,14 @@ const routes: Routes = [
     path: 'single-boat',
     loadChildren: () => import('./single-boat/single-boat.module').then( m => m.SingleBoatPageModule)
   },
+  {
+    path: 'recipe',
+    loadChildren: () => import('./recipe/recipe.module').then( m => m.RecipePageModule)
+  },
+  {
+    path: 'single-recipe',
+    loadChildren: () => import('./single-recipe/single-recipe.module').then( m => m.SingleRecipePageModule)
+  },
 
 ];
 

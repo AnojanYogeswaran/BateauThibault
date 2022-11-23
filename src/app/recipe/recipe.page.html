@@ -1,0 +1,14 @@
+<ion-content>
+  <ion-title class="titre ion-text-center">Nos recettes</ion-title>
+
+  <swiper [autoplay]="true" [keyboard]="true" [pagination]="true" [scrollbar]="true" [zoom]="true" effect="fade" [scrollbar]="{draggable:true} " >
+    <ng-template swiperSlide *ngFor="let recipe of recipeList ">
+      <app-carousel 
+      libelle={{recipe.name}}
+      imgPath={{recipe.imgPath}}
+      subtitle={{recipe.speciality}}
+      (click)="goToDetails(recipe)"
+      >
+      </app-carousel>
+    </ng-template>
+  </swiper>
