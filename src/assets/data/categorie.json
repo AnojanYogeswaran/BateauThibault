@@ -1,0 +1,15 @@
+[
+   {
+        "name": "Poisson",
+        "description": "Tout est frais, tout est bon. Pêchés par nos meilleurs pêcheurs"
+   },
+   {
+        "name": "Fruits de mer",
+        "description": "Des crustacés, du homard, du crabe, des crevettes vous trouverez tout ici"
+    },
+    {
+        "name": "Autres",
+        "description": "Vous trouverez pleins d'autres produits délicieux ici que nous n'avons pas catégorisé"
+    }
+
+ ]
