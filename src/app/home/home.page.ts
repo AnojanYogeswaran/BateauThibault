@@ -19,4 +19,8 @@ export class HomePage {
   goToRecipe(){
     this.router.navigate(['tabs/recipe']);
   }
+
+  goToContact(){
+    this.router.navigate(['tabs/contact']);
+  }
 }
