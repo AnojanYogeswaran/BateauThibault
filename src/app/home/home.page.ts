@@ -23,6 +23,6 @@ export class HomePage {
     this.router.navigate(['tabs/contact']);
   }
   goToProduct(){
-    this.router.navigate(['tabs/categorie']);
+    this.router.navigate(['tabs/product']);
   }
 }

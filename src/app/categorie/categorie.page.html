@@ -1,10 +1,10 @@
 <ion-accordion-group>
   <ion-accordion  *ngFor="let categorie of categorieList ">
-    <ion-item slot="header" color="light">
+    <ion-item slot="header" color="blue">
       <ion-label> {{categorie.name}}</ion-label>
     </ion-item>
-    <div class="ion-padding product-item" slot="content" *ngFor="let product of getCatProduct(categorie)">
+    <ion-button expand="block" size="default" color="blue" class="product-item" slot="content" *ngFor="let product of getCatProduct(categorie)">
       {{product.name}}
-    </div>
+    </ion-button>
   </ion-accordion>
 </ion-accordion-group>

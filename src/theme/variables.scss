@@ -6,6 +6,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
 
 :root {
+  
+  --ion--color-blue:#077c76;
   /** orange **/
   --ion--color-orange:#D79708;
   /** primary **/
@@ -89,6 +91,8 @@
    */
 
   body {
+    
+
     --ion-color-primary: #428cff;
     --ion-color-primary-rgb: 66,140,255;
     --ion-color-primary-contrast: #ffffff;
