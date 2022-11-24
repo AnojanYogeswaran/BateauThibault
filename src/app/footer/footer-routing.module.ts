@@ -19,10 +19,13 @@ const routes: Routes = [
         loadChildren: () => import('../home/home.module').then( m => m.HomePageModule)
       },
       {
+        path: 'categorie',
+        loadChildren: () => import('../categorie/categorie.module').then( m => m.CategoriePageModule)
+      },
+      {
         path: 'contact',
         loadChildren: () => import('../contact/contact.module').then( m => m.ContactPageModule)
       },
-
       {
         path: 'boat',
         loadChildren: () => import('../boat/boat.module').then( m => m.BoatPageModule)
