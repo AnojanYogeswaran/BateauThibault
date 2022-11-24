@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Categorie } from '../models/categorie'
 import { Product } from '../models/produit';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-categorie',
@@ -16,7 +17,8 @@ export class CategoriePage implements OnInit {
   categorieList: Categorie [] = []
   productList: Product [] = []
 
-  constructor(private router : Router, private http: HttpClient) { }
+  constructor(private router : Router, private http: HttpClient,
+    private storage : Storage) { }
   
   ngOnInit() {
     this.http.get<Categorie[]>('../../assets/data/categorie.json').subscribe({
