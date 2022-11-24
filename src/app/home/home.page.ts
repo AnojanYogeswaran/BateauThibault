@@ -22,4 +22,7 @@ export class HomePage {
   goToContact(){
     this.router.navigate(['tabs/contact']);
   }
+  goToProduct(){
+    this.router.navigate(['tabs/categorie']);
+  }
 }
