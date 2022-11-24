@@ -15,6 +15,12 @@ ion-title
   color: #077C76;
   text-shadow: 0px 1px 1px #077C76;
 }
+
+.background{
+  --background: url(../../assets/ressources/footer-page-removebg-preview.png) bottom/100% auto no-repeat;
+  bottom : -30px;
+}
+
 ion-img{
   width: 50%;
   margin: auto;
@@ -34,10 +40,6 @@ ion-button
 ion-button ion-label{
   font-size: 16px;
 }
-.description{
-  
-}
-
 .contact{
   font-weight: 100;
   font-style: italic;
