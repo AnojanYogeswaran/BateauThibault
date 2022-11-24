@@ -11,25 +11,34 @@ ion-title
   text-shadow: 0px 1px 1px #077C76;
 }
 
-ion-img{
-    position:fixed;
+.contact_img{
+    position:relative;
     width: 50%;
     margin: auto;
     display: block;
-    padding-bottom: 35px;
+    padding-bottom: 15px;
   }
 
 .poeme{
-    position: relative;
+    border-radius: 5px;
+    width: 50%;
     background-color: #077C76;
     font-family: 'Imperial Script';
     font-weight: 100;
     color: aliceblue;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    display: block;
 }
 .contact{
+    border-radius: 5px;
     margin-top: 20px;
+    width: 50%;
     background-color: #077C76;
     font-family: 'Imperial Script';
     font-weight: 100;
     color: aliceblue;
+    margin: auto;
+    display: block;
 }
