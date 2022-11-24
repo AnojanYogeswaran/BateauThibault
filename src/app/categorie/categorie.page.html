@@ -3,8 +3,8 @@
     <ion-item slot="header" color="light">
       <ion-label> {{categorie.name}}</ion-label>
     </ion-item>
-    <div class="ion-padding" slot="content">
-      First Content
+    <div class="ion-padding product-item" slot="content" *ngFor="let product of getCatProduct(categorie)">
+      {{product.name}}
     </div>
   </ion-accordion>
 </ion-accordion-group>

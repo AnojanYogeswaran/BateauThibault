@@ -32,4 +32,11 @@ export class CategoriePage implements OnInit {
     });
   }
 
+  getCatProduct(category :{id: number}){
+    let array : Product []= [];
+    array = this.productList.filter((el) => el.category == category.id);
+    console.log(array)
+    return array;
+  }
+
 }
