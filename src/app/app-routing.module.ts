@@ -6,10 +6,8 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./footer/footer.module').then(m=>m.FooterPageModule)
   },
-  {
-    path: 'categorie',
-    loadChildren: () => import('./categorie/categorie.module').then( m => m.CategoriePageModule)
-  },
+  
+  
   
 
 ];

@@ -15,6 +15,10 @@ const routes: Routes = [
 
     children: [
       {
+        path: 'panier',
+        loadChildren: () => import('../panier/panier.module').then( m => m.PanierPageModule)
+      },
+      {
         path: 'home',
         loadChildren: () => import('../home/home.module').then( m => m.HomePageModule)
       },

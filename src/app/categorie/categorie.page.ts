@@ -10,8 +10,6 @@ import { Categorie } from '../models/categorie'
 })
 export class CategoriePage implements OnInit {
 
-
-
   categorieList: Categorie [] = []
 
   constructor(private router : Router, private http: HttpClient) { }
