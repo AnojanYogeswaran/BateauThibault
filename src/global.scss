@@ -32,3 +32,7 @@
 @import '@ionic/angular/css/ionic-swiper';
 @import 'swiper/scss/effect-fade';
 
+ion-content{
+    --background: url(assets/ressources/footer-page-removebg-preview.png) bottom/100% auto no-repeat;
+  }
+

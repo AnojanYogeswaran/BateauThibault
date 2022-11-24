@@ -15,12 +15,12 @@ export class CategoriePage implements OnInit {
   categorieList: Categorie [] = []
 
   constructor(private router : Router, private http: HttpClient) { }
-
+  
   ngOnInit() {
     this.http.get<Categorie[]>('../../assets/data/categorie.json').subscribe({
       next : res => this.categorieList = res,
       error : err => console.log(err)
-  });
-    }
+    });
+  }
 
 }
