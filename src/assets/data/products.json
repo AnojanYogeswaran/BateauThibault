@@ -10,7 +10,7 @@
         "discount": 0.0,
         "comments": "Pêche à la corde",
         "owner": "tig",
-        "icon": "../../assets/icon/icon-poisson.png"
+        "icon": "../../assets/icon/icon-poisson-white.png"
     },
     {
         "id": 9,
@@ -23,7 +23,7 @@
         "discount": 0.0,
         "comments": "Hors saison,  pêche aux casiers",
         "owner": "tig",
-        "icon": "../../assets/icon/crevettes-et-homard.png"
+        "icon": "../../assets/icon/crevettes-et-homard-white.png"
     },
     {
         "id": 3,
@@ -36,7 +36,7 @@
         "discount": 0.0,
         "comments": "Plus de 1.5kg le poisson",
         "owner": "tig",
-        "icon": "../../assets/icon/icon-poisson.png"
+        "icon": "../../assets/icon/icon-poisson-white.png"
     },
     {
         "id": 2,
@@ -49,7 +49,7 @@
         "discount": 0.0,
         "comments": "Environ 550-700g la pièce",
         "owner": "tig",
-        "icon": "../../assets/icon/icon-poisson.png"
+        "icon": "../../assets/icon/icon-poisson-white.png"
     },
     {
         "id": 10,
@@ -62,7 +62,7 @@
         "discount": 0.0,
         "comments": "Hors saison, pêche à l'épuisette",
         "owner": "tig",
-        "icon": "../../assets/icon/fruits-de-mer.png"
+        "icon": "../../assets/icon/fruits-de-mer-white.png"
     },
     {
         "id": 1,
@@ -75,7 +75,7 @@
         "discount": 0.0,
         "comments": "environ 300g",
         "owner": "tig",
-        "icon": "../../assets/icon/icon-poisson.png"
+        "icon": "../../assets/icon/icon-poisson-white.png"
     },
     {
         "id": 5,
@@ -88,7 +88,7 @@
         "discount": 0.0,
         "comments": "Pêche à la corde",
         "owner": "tig",
-        "icon": "../../assets/icon/icon-poisson.png"
+        "icon": "../../assets/icon/icon-poisson-white.png"
     },
     {
         "id": 7,
@@ -101,7 +101,7 @@
         "discount": 0.0,
         "comments": "",
         "owner": "tig",
-        "icon": "../../assets/icon/fruits-de-mer.png"
+        "icon": "../../assets/icon/fruits-de-mer-white.png"
     },
     {
         "id": 8,
@@ -114,7 +114,7 @@
         "discount": 0.0,
         "comments": "",
         "owner": "tig",
-        "icon": "../../assets/icon/fruits-de-mer.png"
+        "icon": "../../assets/icon/fruits-de-mer-white.png"
     },
     {
         "id": 13,
@@ -127,7 +127,7 @@
         "discount": 0.0,
         "comments": "Médaille d'or Salon Agriculture",
         "owner": "tig",
-        "icon": "../../assets/icon/fruits-de-mer.png"
+        "icon": "../../assets/icon/fruits-de-mer-white.png"
     },
     {
         "id": 14,
@@ -140,7 +140,7 @@
         "discount": 0.0,
         "comments": "Médaille d'or salon agriculture",
         "owner": "tig",
-        "icon": "../../assets/icon/fruits-de-mer.png"
+        "icon": "../../assets/icon/fruits-de-mer-white.png"
     },
     {
         "id": 15,
@@ -153,7 +153,7 @@
         "discount": 0.0,
         "comments": "Médaille d'or salon agriculture",
         "owner": "tig",
-        "icon": "../../assets/icon/fruits-de-mer.png"
+        "icon": "../../assets/icon/fruits-de-mer-white.png"
     },
     {
         "id": 16,
@@ -166,7 +166,7 @@
         "discount": 0.0,
         "comments": "",
         "owner": "tig",
-        "icon": "../../assets/icon/fruits-de-mer.png"
+        "icon": "../../assets/icon/fruits-de-mer-white.png"
     },
     {
         "id": 4,
@@ -179,7 +179,7 @@
         "discount": 0.0,
         "comments": "Environ 550-700g la portion",
         "owner": "tig",
-        "icon": "../../assets/icon/icon-poisson.png"
+        "icon": "../../assets/icon/icon-poisson-white.png"
     },
     {
         "id": 6,
@@ -192,6 +192,6 @@
         "discount": 5.0,
         "comments": "",
         "owner": "tig",
-        "icon": "../../assets/icon/fruits-de-mer.png"
+        "icon": "../../assets/icon/fruits-de-mer-white.png"
     }
 ]
