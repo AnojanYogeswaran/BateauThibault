@@ -3,7 +3,9 @@
     <ion-item slot="header" color="blue">
       <ion-label> {{categorie.name}}</ion-label>
     </ion-item>
-    <ion-button expand="block" size="default" color="blue" class="product-item" slot="content" *ngFor="let product of getCatProduct(categorie)">
+    <ion-button *ngFor="let product of getCatProduct(categorie)" 
+    (click)="putInBasket(product)" expand="block"
+     size="default" color="blue" class="product-item" slot="content">
       {{product.name}}
     </ion-button>
   </ion-accordion>

@@ -24,21 +24,27 @@ export class CategoriePage implements OnInit {
     this.http.get<Categorie[]>('../../assets/data/categorie.json').subscribe({
       next : res => this.categorieList = res,
       error : err => console.log(err),
-      complete : () => console.log(this.categorieList),
+      
     });
 
     this.http.get<Product[]>('../../assets/data/products.json').subscribe({
       next : res => this.productList = res,
       error : err => console.log(err),
-      complete : () => console.log(this.productList)
+      
     });
+    this.storage.create();
   }
 
   getCatProduct(category :{id: number}){
     let array : Product []= [];
     array = this.productList.filter((el) => el.category == category.id);
-    console.log(array)
+    
     return array;
+  }
+  async putInBasket(product: Product){
+    await this.storage.set(product.id.toString(),product);
+    
+    console.log(await this.storage.get(product.id.toString()));
   }
 
 }
