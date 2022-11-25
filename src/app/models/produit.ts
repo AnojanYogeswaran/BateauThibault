@@ -8,10 +8,12 @@ export class Product {
     sale: boolean;
     discount: number ;
     comments: string ;
-    owner: string
+    owner: string;
+    quantite: number;
 
     constructor(name: string) 
-    {
+    {   
+        this.quantite = 0;
         this.id = 0;
         this.name = name;
         this.category = 0;
