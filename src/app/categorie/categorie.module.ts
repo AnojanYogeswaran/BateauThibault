@@ -7,9 +7,11 @@ import { IonicModule } from '@ionic/angular';
 import { CategoriePageRoutingModule } from './categorie-routing.module';
 
 import { CategoriePage } from './categorie.page';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
+    SharedModule,
     CommonModule,
     FormsModule,
     IonicModule,

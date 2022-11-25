@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Categorie } from '../models/categorie'
 import { Product } from '../models/produit';
 import { Storage } from '@ionic/storage';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-categorie',
@@ -18,7 +19,7 @@ export class CategoriePage implements OnInit {
   productList: Product [] = []
 
   constructor(private router : Router, private http: HttpClient,
-    private storage : Storage) { }
+    private storage : Storage, public menuCtlr : MenuController) { }
   
   ngOnInit() {
     this.http.get<Categorie[]>('../../assets/data/categorie.json').subscribe({
@@ -45,6 +46,10 @@ export class CategoriePage implements OnInit {
     await this.storage.set(product.id.toString(),product);
     
     console.log(await this.storage.get(product.id.toString()));
+  }
+
+  toggleMenu(){
+    this.menuCtlr.toggle()
   }
 
 }

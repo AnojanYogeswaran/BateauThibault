@@ -1,12 +1,14 @@
-<ion-accordion-group>
-  <ion-accordion  *ngFor="let categorie of categorieList ">
-    <ion-item slot="header" color="blue">
-      <ion-label> {{categorie.name}}</ion-label>
-    </ion-item>
-    <ion-button *ngFor="let product of getCatProduct(categorie)" 
-    (click)="putInBasket(product)" expand="block"
-     size="default" color="blue" class="product-item" slot="content">
-      {{product.name}}
-    </ion-button>
-  </ion-accordion>
-</ion-accordion-group>
+<app-basket></app-basket>
+<div class="ion-page" id="main-content">
+  <ion-accordion-group>
+    <ion-accordion  *ngFor="let categorie of categorieList ">
+      <ion-item slot="header" color="blue">
+        <ion-label> {{categorie.name}}</ion-label>
+      </ion-item>
+      <ion-button *ngFor="let product of getCatProduct(categorie)" 
+      (click)="putInBasket(product); toggleMenu()" expand="block"
+      size="default" color="blue" class="product-item" slot="content">
+        {{product.name}}
+      </ion-button>
+    </ion-accordion>
+  </ion-accordion-group>
