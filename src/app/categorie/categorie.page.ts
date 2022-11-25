@@ -5,6 +5,7 @@ import { Categorie } from '../models/categorie'
 import { Product } from '../models/produit';
 import { Storage } from '@ionic/storage';
 import { MenuController } from '@ionic/angular';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-categorie',
@@ -20,7 +21,7 @@ export class CategoriePage implements OnInit {
   
 
   constructor(private router : Router, private http: HttpClient,
-    private storage : Storage, public menuCtlr : MenuController) { }
+    private storage : Storage, public menuCtlr : MenuController, private toastController: ToastController) { }
   
   ngOnInit() {
     this.http.get<Categorie[]>('../../assets/data/categorie.json').subscribe({
@@ -59,6 +60,16 @@ export class CategoriePage implements OnInit {
   toggleMenu(){
     this.menuCtlr.toggle()
     console.log("Toggle Menu");
+  }
+
+  async presentToast(position: 'top' | 'middle' | 'bottom') {
+    const toast = await this.toastController.create({
+      message: 'Produit ajouter au panier',
+      duration: 1200,
+      position: position
+    });
+
+    await toast.present();
   }
 
 }
