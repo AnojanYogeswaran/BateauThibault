@@ -58,6 +58,7 @@ export class CategoriePage implements OnInit {
 
   toggleMenu(){
     this.menuCtlr.toggle()
+    console.log("Toggle Menu");
   }
 
 }
