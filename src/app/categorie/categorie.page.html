@@ -3,7 +3,7 @@
     <ion-item slot="header" color="blue">
       <ion-label> {{categorie.name}}</ion-label>
     </ion-item>
-    <ion-button expand="block" size="default" color="blue" class="product-item" slot="content" *ngFor="let product of getCatProduct(categorie)">
+    <ion-button (click)="putInBasket(product)" expand="block" size="default" color="blue" class="product-item" slot="content" *ngFor="let product of getCatProduct(categorie)">
         <ion-grid>
           <ion-row>
             <ion-col size="auto">

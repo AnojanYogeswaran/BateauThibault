@@ -6,14 +6,11 @@ import { Storage } from '@ionic/storage';
   templateUrl: './footer.page.html',
   styleUrls: ['./footer.page.scss'],
 })
-export class FooterPage implements OnInit, OnChanges{
+export class FooterPage implements OnInit{
   qte : number = 0; 
   basket:number[]=[];
   constructor(private storage:Storage) { }
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes['qte'].currentValue)
-    
-  }
+ 
 
   ngOnInit() {
     this.storage.create()
