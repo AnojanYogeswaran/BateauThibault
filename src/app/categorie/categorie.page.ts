@@ -17,6 +17,7 @@ export class CategoriePage implements OnInit {
 
   categorieList: Categorie [] = []
   productList: Product [] = []
+  
 
   constructor(private router : Router, private http: HttpClient,
     private storage : Storage, public menuCtlr : MenuController) { }
@@ -43,9 +44,16 @@ export class CategoriePage implements OnInit {
     return array;
   }
   async putInBasket(product: Product){
-    await this.storage.set(product.id.toString(),product);
-    
-    console.log(await this.storage.get(product.id.toString()));
+    if (product.quantite == null){
+      product.quantite = 1;
+      await this.storage.set(product.id.toString(),product.quantite);
+      console.log(await this.storage.get(product.id.toString()));
+    }
+    else{
+      product.quantite++;
+      await this.storage.set(product.id.toString(),product.quantite);
+      console.log(await this.storage.get(product.id.toString()));
+  }
   }
 
   toggleMenu(){
