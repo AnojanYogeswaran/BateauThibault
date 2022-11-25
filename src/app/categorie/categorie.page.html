@@ -6,13 +6,13 @@
     <ion-button expand="block" size="default" color="blue" class="product-item" slot="content" *ngFor="let product of getCatProduct(categorie)">
         <ion-grid>
           <ion-row>
-            <ion-col>
+            <ion-col size="auto">
               <img class="ion-align-items-start" src="{{product.icon}}" alt="icon produit "/>
             </ion-col>
             <ion-col class="ion-text-start">
               <div>{{product.name}}</div>
             </ion-col>
-            <ion-col class="ion-text-end">
+            <ion-col size="auto" class="ion-text-end">
               <div>{{product.price}}</div>
             </ion-col>
           </ion-row>
