@@ -8,7 +8,8 @@ export class Product {
     sale: boolean;
     discount: number ;
     comments: string ;
-    owner: string
+    owner: string;
+    icon: string
 
     constructor(name: string) 
     {
@@ -22,5 +23,6 @@ export class Product {
         this.discount = 0;
         this.comments = "";
         this.owner = "";
+        this.icon = "";
     };
 }

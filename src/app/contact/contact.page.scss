@@ -21,22 +21,30 @@ ion-title
 
 .poeme{
     border-radius: 5px;
-    width: 50%;
-    background-color: #077C76;
-    font-family: 'Imperial Script';
-    font-weight: 100;
-    color: aliceblue;
+    width: 60%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 10px;
+    padding: 5px;
+    background-color: #077C76;
+
+    font-family: 'Roboto';
+    font-style: italic;
+    font-weight: 100;
+    font-size: small;
+    color: aliceblue;
+
     display: block;
 }
 .contact{
     border-radius: 5px;
+    width: 60%;
     margin-top: 20px;
-    width: 50%;
+    padding: 5px;
     background-color: #077C76;
-    font-family: 'Imperial Script';
+    
+    font-family: 'Roboto';
+    font-size: small;
     font-weight: 100;
     color: aliceblue;
     margin: auto;
