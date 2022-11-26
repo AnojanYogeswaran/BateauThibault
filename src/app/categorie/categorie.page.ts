@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Categorie } from '../models/categorie'
 import { Product } from '../models/produit';
 import { Storage } from '@ionic/storage';
@@ -20,8 +19,12 @@ export class CategoriePage implements OnInit {
   productList: Product [] = []
   
 
-  constructor(private router : Router, private http: HttpClient,
-    private storage : Storage, public menuCtlr : MenuController, private toastController: ToastController) { }
+  constructor(
+    private http: HttpClient,
+    private storage : Storage, 
+    public menuCtlr : MenuController, 
+    private toastController: ToastController,
+    ) { }
   
   ngOnInit() {
     this.http.get<Categorie[]>('../../assets/data/categorie.json').subscribe({

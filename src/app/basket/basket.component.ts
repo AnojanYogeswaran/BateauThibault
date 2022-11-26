@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-basket',
@@ -7,8 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BasketComponent implements OnInit {
 
-  constructor() { }
+  constructor(public menuCtlr : MenuController) { }
 
   ngOnInit() {}
+
+  toggleMenu(){
+    this.menuCtlr.toggle()
+    console.log("Toggle Menu");
+  }
 
 }

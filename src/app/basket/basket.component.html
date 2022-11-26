@@ -1,7 +1,12 @@
 <ion-menu contentId="main-content">
     <ion-header>
         <ion-toolbar>
-            <ion-title>Menu Content</ion-title>
+            <ion-buttons slot="start">
+                <ion-button (click)="toggleMenu()">
+                    <ion-icon name="arrow-back"></ion-icon>
+                </ion-button>
+            </ion-buttons>
+            <ion-title class="titre ion-text-center">Panier d'achat</ion-title>
         </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">This is the menu content.</ion-content>

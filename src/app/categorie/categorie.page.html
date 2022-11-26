@@ -7,7 +7,7 @@
     </ion-item>
     <ion-button expand="block" 
                 size="default" color="blue" 
-                class="product-item" (click)="presentToast('bottom')" 
+                class="product-item" (click)="presentToast('bottom'); toggleMenu();putInBasket(product);" 
                 slot="content" *ngFor="let product of getCatProduct(categorie)">
 
         <ion-grid>
@@ -19,7 +19,7 @@
               <div>{{product.name}}</div>
             </ion-col>
             <ion-col size="auto" class="ion-text-end">
-              <div>{{product.price}}</div>
+              <div>{{product.price}}€</div>
             </ion-col>
           </ion-row>
         </ion-grid>
