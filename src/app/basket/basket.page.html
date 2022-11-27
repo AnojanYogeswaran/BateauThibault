@@ -10,10 +10,10 @@
                   <img class="ion-align-items-start" src="{{produit.icon}}" alt="icon produit "/>
                 </ion-col>
                 <ion-col class="ion-text-start">
-                  <div>{{produit.name}}</div>
+                  <div>{{produit.name}} x {{produit.quantite}}</div>
                 </ion-col>
                 <ion-col size="auto" class="ion-text-end">
-                  <div>{{produit.price}}€</div>
+                  <div>{{produit.price * produit.quantite}}€</div>
                 </ion-col>
               </ion-row>
             </ion-grid>

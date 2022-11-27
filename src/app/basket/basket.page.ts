@@ -28,16 +28,20 @@ export class BasketPage implements OnInit {
 
   getBasket(){
   
-    return new Promise(resolve=>{
-    this.storage.forEach((v,k)=>{
-      console.log(v)
-      console.log(k)
-      this.panierList.push(v)
-    }).then(()=>{
-    resolve(this.panierList);
-    })
-    })
+    return new Promise(resolve=>
+      {
+      this.storage.forEach((v,k)=>
+        {
+          console.log(v)
+          console.log(k)
+          this.panierList.push(JSON.parse(v))
+        }).then(()=>
+          {
+            resolve(this.panierList);
+          })
+      })
     }
+
 getBasketlength(){
 this.getBasket().then(()=>console.log())
 
