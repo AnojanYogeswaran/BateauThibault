@@ -48,16 +48,18 @@ export class CategoriePage implements OnInit {
     return array;
   }
   async putInBasket(product: Product){
+
     if (product.quantite == null){
       product.quantite = 1;
-      await this.storage.set(product.id.toString(),product.quantite);
+      await this.storage.set(product.id.toString(),product);
       console.log(await this.storage.get(product.id.toString()));
     }
     else{
       product.quantite++;
-      await this.storage.set(product.id.toString(),product.quantite);
+      await this.storage.set(product.id.toString(),product);
       console.log(await this.storage.get(product.id.toString()));
   }
+    
   }
 
   toggleMenu(){
