@@ -27,7 +27,6 @@ export class BasketPage implements OnInit {
   }
 
   getBasket(){
-  
     return new Promise(resolve=>
       {
       this.storage.forEach((v,k)=>
@@ -42,11 +41,26 @@ export class BasketPage implements OnInit {
       })
     }
 
-getBasketlength(){
-this.getBasket().then(()=>console.log())
+  removeFromBasket = async (product: Product) =>{
+    let prod = JSON.parse(await this.storage.get(product.id.toString()));      
+    if(prod.quantite === 0){
+      console.log("flop")
+    }
+    if(prod.quantite === 1){
+      await this.storage.remove(prod.id.toString());
+      console.log("Removed")
+    }
+    else{
+      prod.quantite --;
+      await this.storage.set(product.id.toString(), JSON.stringify(prod));
+      console.log("Minus 1");
+      console.log(await this.storage.get(product.id.toString()));
+    }
+  }
 
-
-}
+  getBasketlength(){
+    this.getBasket().then(()=>console.log())
+  }
 
 
 

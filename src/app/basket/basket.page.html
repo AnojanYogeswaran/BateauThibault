@@ -18,8 +18,12 @@
               </ion-row>
               <ion-row>
                 <ion-col class="ion-text-end">
-                  <ion-button color="primary" shape="round">+</ion-button>
-                  <ion-button shape="round" color="danger">-</ion-button>
+                  <ion-button  shape="round" fill="outline">
+                    <ion-icon slot="end" name="add-outline"></ion-icon>
+                  </ion-button>
+                  <ion-button shape="round" fill="outline" (click)="removeFromBasket(produit)" >
+                    <ion-icon slot="end" name="remove-outline"></ion-icon>
+                  </ion-button>
                 </ion-col>
               </ion-row>
             </ion-grid>
