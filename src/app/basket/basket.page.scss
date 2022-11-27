@@ -47,3 +47,28 @@ ion-icon{
   padding-right: 8px;
 }
 
+.product-item {
+    color:white;
+    background: #D79708;
+}
+// ion-col{
+//     width: auto;
+// }
+
+ion-accordion ion-item{
+    background: #077c76;    
+    color:white;
+}
+      
+ion-align-items-start{
+    align-items: flex-start;
+}
+
+ion-text-start{
+    align-items: flex-start;
+}
+
+img{
+    width: 20px;
+    height: 20px;
+}

@@ -6,12 +6,20 @@
           <ion-item color="blue">
             <ion-grid>
               <ion-row>
-                
+                <ion-col size="auto">
+                  <img class="ion-align-items-start" src="{{produit.icon}}" alt="icon produit "/>
+                </ion-col>
                 <ion-col class="ion-text-start">
                   <div>{{produit.name}} x {{produit.quantite}}</div>
                 </ion-col>
                 <ion-col size="auto" class="ion-text-end">
                   <div>{{produit.price * produit.quantite}}€</div>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col class="ion-text-end">
+                  <ion-button color="blue" shape="round">+</ion-button>
+                  <ion-button shape="round" color="danger">-</ion-button>
                 </ion-col>
               </ion-row>
             </ion-grid>

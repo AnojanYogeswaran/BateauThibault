@@ -7,7 +7,7 @@
 
 :root {
   
-  --ion--color-blue:#077c76;
+  --ion-color-blue:#077c76;
   /** orange **/
   --ion--color-orange:#D79708;
   /** primary **/
@@ -92,7 +92,8 @@
 
   body {
     
-
+    --ion-color-blue:#077c76;
+    
     --ion-color-primary: #428cff;
     --ion-color-primary-rgb: 66,140,255;
     --ion-color-primary-contrast: #ffffff;
