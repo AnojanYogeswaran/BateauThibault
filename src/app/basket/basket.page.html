@@ -18,10 +18,10 @@
               </ion-row>
               <ion-row>
                 <ion-col class="ion-text-end">
-                  <ion-button shape="round" fill="outline">
+                  <ion-button shape="round" fill="outline" (click)="addToBasket(produit);refresh()">
                     <ion-icon slot="end" name="add-outline"></ion-icon>
                   </ion-button>
-                  <ion-button shape="round" fill="outline" (click)="removeFromBasket(produit)" >
+                  <ion-button shape="round" fill="outline" (click)="removeFromBasket(produit);refresh()" >
                     <ion-icon slot="end" name="remove-outline"></ion-icon>
                   </ion-button>
                 </ion-col>
