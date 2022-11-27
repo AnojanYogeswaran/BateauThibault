@@ -5,6 +5,7 @@ import { Product } from '../models/produit';
 import { Storage } from '@ionic/storage';
 import { MenuController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
+import { timeStamp } from 'console';
 
 @Component({
   selector: 'app-categorie',
@@ -47,17 +48,24 @@ export class CategoriePage implements OnInit {
     
     return array;
   }
-  async putInBasket(product: Product){
-    if (product.quantite == null){
+
+  async addToBasket(product: Product){
+    if(await this.storage.get(product.id.toString()) == null){
       product.quantite = 1;
-      await this.storage.set(product.id.toString(),product.quantite);
+      await this.storage.set(product.id.toString(), JSON.stringify(product))
+      let prod = JSON.parse(await this.storage.get(product.id.toString()));
+      prod.quantite += 1;
+      await this.storage.set(product.id.toString(), JSON.stringify(product))
       console.log(await this.storage.get(product.id.toString()));
     }
     else{
-      product.quantite++;
-      await this.storage.set(product.id.toString(),product.quantite);
+      let prod = JSON.parse(await this.storage.get(product.id.toString()))
+      prod.quantite += 1;
+      await this.storage.set(prod.id.toString(), JSON.stringify(prod))
+      console.log("coucou")
       console.log(await this.storage.get(product.id.toString()));
-  }
+
+    }
   }
 
   toggleMenu(){
