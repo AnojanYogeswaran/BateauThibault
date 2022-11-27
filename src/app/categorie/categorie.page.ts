@@ -12,12 +12,8 @@ import { ToastController } from '@ionic/angular';
   styleUrls: ['./categorie.page.scss'],
 })
 export class CategoriePage implements OnInit {
-
-
-
   categorieList: Categorie [] = []
   productList: Product [] = []
-  
 
   constructor(
     private http: HttpClient,
@@ -59,6 +55,7 @@ export class CategoriePage implements OnInit {
       await this.storage.set(product.id.toString(),product);
       console.log(await this.storage.get(product.id.toString()));
   }
+  window.location.reload()
     
   }
 

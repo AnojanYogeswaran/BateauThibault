@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../models/produit';
 import { Storage } from '@ionic/storage';
+import { registerLocaleData } from '@angular/common';
 
 @Component({
   selector: 'app-basket',
@@ -39,6 +40,7 @@ export class BasketPage implements OnInit {
     }
 getBasketlength(){
 this.getBasket().then(()=>console.log())
+this.ngOnInit()
 
 }
 
