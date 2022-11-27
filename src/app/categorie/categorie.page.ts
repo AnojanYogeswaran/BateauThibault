@@ -62,7 +62,6 @@ export class CategoriePage implements OnInit {
       let prod = JSON.parse(await this.storage.get(product.id.toString()))
       prod.quantite += 1;
       await this.storage.set(prod.id.toString(), JSON.stringify(prod))
-      console.log("coucou")
       console.log(await this.storage.get(product.id.toString()));
 
     }
