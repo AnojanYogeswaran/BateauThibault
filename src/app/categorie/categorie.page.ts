@@ -5,6 +5,9 @@ import { Product } from '../models/produit';
 import { Storage } from '@ionic/storage';
 import { MenuController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
+import { timeStamp } from 'console';
+import { CartService } from '../service/cart.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-categorie',
@@ -12,14 +15,20 @@ import { ToastController } from '@ionic/angular';
   styleUrls: ['./categorie.page.scss'],
 })
 export class CategoriePage implements OnInit {
+
+
+
   categorieList: Categorie [] = []
   productList: Product [] = []
+  
 
   constructor(
     private http: HttpClient,
     private storage : Storage, 
     public menuCtlr : MenuController, 
     private toastController: ToastController,
+    private cartService: CartService,
+    private router : Router
     ) { }
   
   ngOnInit() {
@@ -29,10 +38,9 @@ export class CategoriePage implements OnInit {
       
     });
 
-    this.http.get<Product[]>('../../assets/data/products.json').subscribe({
+    this.cartService.getProduct().subscribe({
       next : res => this.productList = res,
-      error : err => console.log(err),
-      
+      error : err => console.log(err)
     });
     this.storage.create();
   }
@@ -43,20 +51,30 @@ export class CategoriePage implements OnInit {
     
     return array;
   }
-  async putInBasket(product: Product){
 
-    if (product.quantite == null){
+
+  async addToBasket(product: Product){
+    if(await this.storage.get(product.id.toString()) == null){
       product.quantite = 1;
-      await this.storage.set(product.id.toString(),product);
+      await this.storage.set(product.id.toString(), JSON.stringify(product))
+      let prod = JSON.parse(await this.storage.get(product.id.toString()));
+      prod.quantite += 1;
+      await this.storage.set(product.id.toString(), JSON.stringify(product))
       console.log(await this.storage.get(product.id.toString()));
+      this.router.navigate(['tabs/basket']).then(()=>{
+        window.location.reload();
+      })
     }
     else{
-      product.quantite++;
-      await this.storage.set(product.id.toString(),product);
+      let prod = JSON.parse(await this.storage.get(product.id.toString()))
+      prod.quantite += 1;
+      await this.storage.set(prod.id.toString(), JSON.stringify(prod))
       console.log(await this.storage.get(product.id.toString()));
-  }
-  window.location.reload()
-    
+      this.router.navigate(['tabs/basket']).then(()=>{
+        window.location.reload();
+      })
+      
+    }
   }
 
   toggleMenu(){

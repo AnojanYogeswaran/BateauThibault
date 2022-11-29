@@ -1,5 +1,8 @@
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Storage } from '@ionic/storage';
+import { BehaviorSubject } from 'rxjs';
+import { Product } from '../models/produit';
+import { CartService } from '../service/cart.service';
 
 @Component({
   selector: 'app-footer',
@@ -7,29 +10,35 @@ import { Storage } from '@ionic/storage';
   styleUrls: ['./footer.page.scss'],
 })
 export class FooterPage implements OnInit{
-  qte : number = 0; 
-  basket:number[]=[];
-  constructor(private storage:Storage) { }
- 
+  @Input() qte : number = 0; 
+  panierList :Product[]=[];
+  
+  constructor(private storage:Storage, public cd: ChangeDetectorRef,
+    private cartService: CartService)
+ { }
 
   ngOnInit() {
     this.storage.create()
+    this.panierList = this.cartService.getCart()
     this.getBasketlength()
-    
   }
- 
-  getBasket(){
-      this.qte = 0;
-      return new Promise(resolve=>{
-      this.storage.forEach((v,k)=>{
-      this.qte += parseInt(v)
-      }).then(()=>{
-      resolve(this.basket);
+  
+  getBasket()
+  {
+    this.qte = 0;
+    return new Promise(resolve=>{
+    this.storage.forEach((v,k)=>
+    { 
+
+      this.qte += parseInt(JSON.parse(v).quantite);
+    }).then(()=>
+      {
+        resolve(this.panierList);
       })
       })
-      }
+  }
 getBasketlength(){
-  this.getBasket().then(()=>console.log(this.qte))
+  return this.getBasket().then(()=>this.qte)
   
 }
   

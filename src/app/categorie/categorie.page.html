@@ -7,7 +7,7 @@
     </ion-item>
     <ion-button expand="block" 
                 size="default" color="blue" 
-                class="product-item" (click)="presentToast('bottom'); toggleMenu();putInBasket(product);" 
+                class="product-item" (click)="presentToast('top'); toggleMenu();addToBasket(product);" 
                 slot="content" *ngFor="let product of getCatProduct(categorie)">
 
         <ion-grid>

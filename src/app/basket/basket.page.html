@@ -2,7 +2,7 @@
   <ion-content>
     <ion-title class="titre ion-text-center">Le bateau de Thibault</ion-title>
     
-        <ion-list *ngFor="let produit of panierList"  lines="none" color="orange">
+        <ion-list *ngFor="let produit of panierList" lines="none" color="orange" class="list-items">
           <ion-item color="blue">
             <ion-grid>
               <ion-row>
@@ -10,16 +10,28 @@
                   <img class="ion-align-items-start" src="{{produit.icon}}" alt="icon produit "/>
                 </ion-col>
                 <ion-col class="ion-text-start">
-                  <div>{{produit.name}}</div>
+                  <div
+                  >{{produit.name}} x {{produit.quantite}}</div>
                 </ion-col>
                 <ion-col size="auto" class="ion-text-end">
-                  <div>{{produit.quantite}}</div>
+                  <div>{{produit.price * produit.quantite}}€</div>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col class="ion-text-end">
+                  <ion-button shape="round" fill="outline" (click)="addToBasket(produit);refresh()">
+                    <ion-icon slot="end" name="add-outline"></ion-icon>
+                  </ion-button>
+                  <ion-button shape="round" fill="outline" (click)="removeFromBasket(produit);refresh()" >
+                    <ion-icon slot="end" name="remove-outline"></ion-icon>
+                  </ion-button>
                 </ion-col>
               </ion-row>
             </ion-grid>
-            
           </ion-item>
-          </ion-list>
-      
+        </ion-list>
+        <ion-item>
+          
+        </ion-item>
   </ion-content>
 </div>
