@@ -37,15 +37,26 @@
               <ion-row class="ion-justify-content-end ion-padding-bottom" >
                 <b>Prix total : {{price}}€</b>
               </ion-row>
-               
-              <ion-row class="ion-justify-content-end">
-                <ion-button (click)="presentAlert()" color="dark" shape="round" class="buttonvalider">
-                  Valider
-                </ion-button>
+              <ion-row class="ion-padding-bottom">
+          
+                <ion-label> <b>Lieu de livraison (choisir): </b></ion-label>
+                <ion-select placeholder="Point de vente">
+                  <ion-select-option value="bistrot">Bistrot des Gascons</ion-select-option>
+                  <ion-select-option value="Café">Café des Phares</ion-select-option>
+                  <ion-select-option value="Tulipe">La Vert Tulipe</ion-select-option>
+                  <ion-select-option value="Ruche">Ruche qui dit Oui</ion-select-option>
+                </ion-select>
+              
+
               </ion-row>
+              
             </ion-grid>
           </ion-item>
-
+          <ion-row class="ion-justify-content-end ion-padding-right buttonvalider" >
+            <ion-button (click)="presentAlert()" color="dark" shape="round" class="buttonvalider">
+              Valider
+            </ion-button>
+          </ion-row>
         </div>
         <div class="vide" *ngIf="this.panierList.length == 0">
            Le panier est vide choisissez des produits 
