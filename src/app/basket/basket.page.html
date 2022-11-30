@@ -14,10 +14,10 @@
                 </ion-col>
                 <ion-col size="auto" class="ion-text-end">
                   <div>{{produit.price * produit.quantite}}€</div>
-                </ion-col>
+                </ion-col> 
               </ion-row>
               <ion-row>
-                <ion-col class="ion-text-end">
+                <ion-col class="ion-align-items-end">
                   <ion-button shape="round" fill="outline" (click)="addToBasket(produit);refresh()">
                     <ion-icon slot="end" name="add-outline"></ion-icon>
                   </ion-button>
@@ -25,10 +25,28 @@
                     <ion-icon slot="end" name="remove-outline"></ion-icon>
                   </ion-button>
                 </ion-col>
+                
               </ion-row>
             </ion-grid>
           </ion-item>
+          
         </ion-list>
-      
+        
+          <ion-item class="itemvalider" size="auto" color="orange">
+            <ion-grid>
+              <ion-row class="ion-text-end ion-justify-content-end" >
+                prix : 160
+              </ion-row>
+              <ion-row class="ion-text-end">
+                ff
+              </ion-row>
+              <ion-row class="ion-justify-content-end">
+                <ion-button color="dark" shape="round" class="buttonvalider">
+                  Valider
+                </ion-button>
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+     
   </ion-content>
 </div>

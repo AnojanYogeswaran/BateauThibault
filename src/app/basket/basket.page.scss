@@ -47,6 +47,11 @@ ion-button {
   --border-color: white;
 }
 
+.buttonvalider{
+  
+  --border-color: white;
+}
+
 .contact{
   font-weight: 100;
   font-style: italic;
@@ -71,6 +76,10 @@ ion-accordion ion-item{
       
 ion-align-items-start{
     align-items: flex-start;
+}
+
+ion-align-items-end{
+  align-items: flex-end;
 }
 
 ion-text-start{
