@@ -20,7 +20,7 @@
       <ion-tab-button (click)="getBasketlength()" tab="basket">
         <ion-icon name="basket-outline"></ion-icon>
         <ion-label>Panier</ion-label>
-        <ion-badge>{{qte ? qte : 0}}</ion-badge>
+        <ion-badge>{{quantite.getValue()}}</ion-badge>
       </ion-tab-button>
     </ion-tab-bar>
   </ion-tabs>

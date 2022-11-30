@@ -12,6 +12,8 @@ import { CartService } from '../service/cart.service';
 export class FooterPage implements OnInit{
   @Input() qte : number = 0; 
   panierList :Product[]=[];
+  quantite = new BehaviorSubject <number>(0)
+  myAction = this.quantite.asObservable()
   
   constructor(private storage:Storage, public cd: ChangeDetectorRef,
     private cartService: CartService)
@@ -38,7 +40,10 @@ export class FooterPage implements OnInit{
       })
   }
 getBasketlength(){
-  return this.getBasket().then(()=>this.qte)
+  console.log("ff")
+  console.log(this.quantite.getValue())
+  return this.getBasket().then(()=>this.quantite.next(this.qte));
+  
   
 }
   
