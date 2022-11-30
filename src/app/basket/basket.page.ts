@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../models/produit';
 import { Storage } from '@ionic/storage';
 import { Router } from '@angular/router';
+import { AlertController, ToastButton, ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-basket',
@@ -12,11 +13,15 @@ export class BasketPage implements OnInit {
   
   panierList: Product [] = []
   productList: Product [] = []
+  handlerMessage = '';
+  roleMessage = '';
 
   price : Number = 0 
   constructor(
     private storage : Storage,
-    private router: Router 
+    private router: Router,
+    private alertController : AlertController ,
+    private toastController : ToastController
     ) { }
 
   ngOnInit() {
@@ -24,6 +29,45 @@ export class BasketPage implements OnInit {
     this.getBasket()
   }
 
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Envoyer votre commande de '+this.price+'€',
+      
+      buttons: [
+        {
+          text: 'Oui',
+          role: 'confirm',
+          handler: () => {
+            this.handlerMessage = 'Alert confirmed';
+            this.presentToast('top')
+            this.router.navigate(['tabs/home']);
+            this.storage.clear()
+          },
+        },
+        {
+          text: 'Non',
+          role: 'cancel',
+          handler: () => {
+            this.handlerMessage = 'Alert confirmed';
+            
+          },
+        }
+        
+      ],
+    });
+    await alert.present();
+  }
+
+  async presentToast(position: 'top' | 'middle' | 'bottom') {
+    const toast = await this.toastController.create({
+      message: 'Votre commande a bien été passé',
+      duration: 1200,
+      position: position
+    });
+
+    await toast.present();
+  }
+  
   async getBasket(){
     this.panierList = []
     return await new Promise(resolve=>
@@ -36,16 +80,16 @@ export class BasketPage implements OnInit {
           this.price+= JSON.parse(v).price
         }).then(()=>
           {
-            resolve(this.panierList);
+            resolve(console.log(this.panierList));
           })
       })
     }
 
-    refresh(){
+    /*refresh(){
       this.router.navigate(['tabs/basket']).then(()=>{
         window.location.reload();
       })
-    }
+    }*/
 
   removeFromBasket = async (product: Product) =>{
     let prod = JSON.parse(await this.storage.get(product.id.toString()));      
@@ -77,7 +121,8 @@ export class BasketPage implements OnInit {
       prod.quantite += 1;
       await this.storage.set(prod.id.toString(), JSON.stringify(prod))
       console.log(await this.storage.get(product.id.toString()));
-
+      
     }
+    this.getBasket()
   }
 }
