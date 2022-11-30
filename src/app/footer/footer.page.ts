@@ -13,13 +13,13 @@ export class FooterPage implements OnInit{
 
   ngOnInit() {
     this.storage.create()
-    this.getBasketlength()
+    this.getBasket()
   }
   
-  getBasket()
+  async getBasket()
   {
     this.qte = 0;
-    return new Promise(resolve=>{
+    return await new Promise(resolve=>{
     this.storage.forEach((v,k)=>
     {
       this.qte += parseInt(JSON.parse(v).quantite);
@@ -28,11 +28,5 @@ export class FooterPage implements OnInit{
         resolve(this.basket);
       })
       })
-  }
-getBasketlength(){
-  this.getBasket().then(()=>console.log(this.qte))
-  
-}
-  
-
+  }  
 }

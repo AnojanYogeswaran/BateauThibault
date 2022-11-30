@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../models/produit';
 import { Storage } from '@ionic/storage';
 import { Router } from '@angular/router';
-import { threadId } from 'worker_threads';
 
 @Component({
   selector: 'app-basket',
@@ -24,8 +23,9 @@ export class BasketPage implements OnInit {
     this.getBasket()
   }
 
-  getBasket(){
-    return new Promise(resolve=>
+  async getBasket(){
+    this.panierList = []
+    return await new Promise(resolve=>
       {
       this.storage.forEach((v,k)=>
         {
@@ -78,11 +78,4 @@ export class BasketPage implements OnInit {
 
     }
   }
-
-  getBasketlength(){
-    this.getBasket().then(()=>console.log())
-  }
-
-
-
 }
