@@ -48,6 +48,8 @@ ion-button {
   --border-color: white;
 }
 
+
+
 ion-select{
   --placeholder-opacity : 1;
   --placeholder-color : white;
@@ -56,13 +58,7 @@ ion-select{
 .buttonvalider{
   --border-color: white;
 }
-.vide{
-  font-size: 20px;
-  color: #077C76;
-  margin-top: 50%;
-  font-family: 'roboto';
-  text-align: center;
-}
+
 .contact{
   font-weight: 100;
   font-style: italic;
@@ -80,6 +76,14 @@ ion-icon{
 ion-accordion ion-item{
     background: #077c76;    
     color:white;
+}
+
+.vide{
+  font-size: 20px;
+  color: #077C76;
+  margin-top: 50%;
+  font-family: 'roboto';
+  text-align: center;
 }
       
 ion-align-items-start{

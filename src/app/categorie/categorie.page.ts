@@ -5,7 +5,6 @@ import { Product } from '../models/produit';
 import { Storage } from '@ionic/storage';
 import { MenuController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
-import { timeStamp } from 'console';
 
 @Component({
   selector: 'app-categorie',
@@ -18,6 +17,7 @@ export class CategoriePage implements OnInit {
 
   categorieList: Categorie [] = []
   productList: Product [] = []
+  basketList: Product[] = [];
   
 
   constructor(
@@ -40,7 +40,24 @@ export class CategoriePage implements OnInit {
       
     });
     this.storage.create();
+    this.getBasket();
   }
+
+  async getBasket(){
+    this.basketList = []
+    return await new Promise(resolve=>
+      {
+      this.storage.forEach((v,k)=>
+        {
+          console.log(v)
+          console.log(k)
+          this.basketList.push(JSON.parse(v))
+        }).then(()=>
+          {
+            resolve(console.log(this.basketList));
+          })
+      })
+    }
 
   getCatProduct(category :{id: number}){
     let array : Product []= [];
@@ -63,8 +80,8 @@ export class CategoriePage implements OnInit {
       prod.quantite += 1;
       await this.storage.set(prod.id.toString(), JSON.stringify(prod))
       console.log(await this.storage.get(product.id.toString()));
-
     }
+    this.getBasket();
   }
 
   toggleMenu(){

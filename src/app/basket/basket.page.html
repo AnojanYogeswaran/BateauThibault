@@ -37,7 +37,7 @@
               <ion-row class="ion-justify-content-end ion-padding-bottom" >
                 <b>Prix total : {{price}}€</b>
               </ion-row>
-               
+              
               <ion-row class="ion-justify-content-end">
                 <ion-button (click)="presentAlert()" color="dark" shape="round" class="buttonvalider">
                   Valider
@@ -45,10 +45,9 @@
               </ion-row>
             </ion-grid>
           </ion-item>
-
-        </div>
+    </div>
         <div class="vide" *ngIf="this.panierList.length == 0">
-           Le panier est vide choisissez des produits 
+          Le panier est vide choisissez des produits
         </div>
   </ion-content>
 </div>
