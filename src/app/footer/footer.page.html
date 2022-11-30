@@ -1,5 +1,3 @@
-
-    
   <ion-tabs>
     <ion-tab-bar slot="bottom" class="tabs-img">
       <ion-tab-button tab="home">
@@ -7,11 +5,11 @@
         <ion-label>Home</ion-label>
         
       </ion-tab-button>
-  
+<!--   
       <ion-tab-button tab="restaurant">
         <ion-icon name="restaurant-outline"></ion-icon>
         <ion-label>Restau</ion-label>
-      </ion-tab-button>
+      </ion-tab-button> -->
   
       <ion-tab-button tab="product">
         <ion-icon name="fish-outline"></ion-icon>
@@ -23,6 +21,12 @@
         <ion-label>Panier</ion-label>
         <ion-badge>{{qte ? qte : 0}}</ion-badge>
       </ion-tab-button>
+
+      <ion-tab-button (click)='goBack()'>
+        <ion-icon name="arrow-back-outline"></ion-icon>
+        <ion-label>Retour</ion-label>
+      </ion-tab-button>
+
     </ion-tab-bar>
   </ion-tabs>
 

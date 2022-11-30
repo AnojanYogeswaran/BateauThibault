@@ -1,5 +1,6 @@
-import { ChangeDetectorRef, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { Storage } from '@ionic/storage';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-footer',
@@ -9,7 +10,7 @@ import { Storage } from '@ionic/storage';
 export class FooterPage implements OnInit{
   @Input() qte : number = 0; 
   basket:number[]=[];
-  constructor(private storage:Storage, public cd: ChangeDetectorRef) { }
+  constructor(private storage:Storage, public cd: ChangeDetectorRef, public navController: NavController) { }
 
   ngOnInit() {
     this.storage.create()
@@ -28,5 +29,10 @@ export class FooterPage implements OnInit{
         resolve(this.basket);
       })
       })
-  }  
+  }
+  
+  goBack() {
+    this.navController.back();
+  }
+
 }
