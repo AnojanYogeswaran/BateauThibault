@@ -106,6 +106,7 @@ export class BasketPage implements OnInit {
       console.log("Minus 1");
       console.log(await this.storage.get(product.id.toString()));
     }
+    this.getBasket()
   }
   async addToBasket(product: Product){
     if(await this.storage.get(product.id.toString()) == null){
