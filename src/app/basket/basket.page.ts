@@ -12,7 +12,8 @@ export class BasketPage implements OnInit {
   
   panierList: Product [] = []
   productList: Product [] = []
-  
+
+  price : Number = 0 
   constructor(
     private storage : Storage,
     private router: Router 
@@ -32,6 +33,7 @@ export class BasketPage implements OnInit {
           console.log(v)
           console.log(k)
           this.panierList.push(JSON.parse(v))
+          this.price+= JSON.parse(v).price
         }).then(()=>
           {
             resolve(this.panierList);
