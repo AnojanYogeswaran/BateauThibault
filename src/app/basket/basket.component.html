@@ -9,10 +9,10 @@
             <ion-title class="titre ion-text-center">Panier d'achat</ion-title>
         </ion-toolbar>
     </ion-header>
-
+    <ion-content>
     <div *ngIf="this.basketList.length > 0">
-        <ion-list  *ngFor="let produit of basketList" lines="none" color="orange" class="list-items">
-          <ion-item color="blue">
+        <ion-list   lines="none" color="orange" class="list-items">
+          <ion-item *ngFor="let produit of basketList" color="blue">
             <ion-grid>
               <ion-row>
                 <ion-col size="auto">
@@ -54,8 +54,8 @@
               </ion-row>
             </ion-grid>
           </ion-item>
-
     </div>
+</ion-content>
     
     <div class="vide" *ngIf="this.basketList.length == 0">
         Le panier est vide choisissez des produits

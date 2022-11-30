@@ -6,6 +6,10 @@
 //     width: auto;
 // }
 
+ion-menu {
+    --min-height: 100%;
+}
+
 ion-accordion ion-item{
     background: #077c76;    
     color:white;
