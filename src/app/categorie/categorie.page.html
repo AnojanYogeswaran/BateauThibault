@@ -17,6 +17,9 @@
             </ion-col>
             <ion-col class="ion-text-start">
               <div>{{product.name}}</div>
+              <ion-badge color="danger" *ngIf="product.sale">
+                promo
+              </ion-badge>
             </ion-col>
             <ion-col size="auto" class="ion-text-end">
               <div>{{product.price}}€</div>
